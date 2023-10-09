@@ -1,19 +1,17 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  mode: "jit",
-  darkMode: "class",
-  content: ["./src/**/*.tsx"],
-  plugins: [
-    require("daisyui")
-  ],
-  daisyui: {
-    themes: [
-      {
-        winter: {
-          ...require("daisyui/src/theming/themes")["[data-theme=winter]"],
-          primary: "#1D4ED8"
-        }
-      },
-    ]
-  },
-}
+import daisyui from "daisyui";
+import daisyuiThemes from "daisyui/src/theming/themes";
+
+export default {
+    mode: "jit",
+    darkMode: "class",
+    content: ["./src/**/*.tsx"],
+    plugins: [daisyui],
+    daisyui: {
+        themes: [{
+            winter: {
+                ...daisyuiThemes["[data-theme=winter]"],
+                primary: "#1D4ED8",
+            },
+        }],
+    },
+};
